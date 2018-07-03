@@ -1,0 +1,30 @@
+@import "src/theme/theme-variables";
+
+.page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100%;
+
+	body.fixed-header & {
+		padding-top: $header-height;
+	}
+
+	body.aside-opened & {
+		@media (min-width: 1600px) {
+			margin-right: $aside-width;
+		}
+	}
+}
+
+.page-main {
+	flex: 1 1 auto;
+}
+
+.page-content {
+	margin: .75rem 0;
+
+	@include media-breakpoint-up(md) {
+		margin: 1.5rem 0;
+	}
+}
