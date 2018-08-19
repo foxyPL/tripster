@@ -1,23 +1,27 @@
-<ul class="nav nav-tabs" style="white-space: nowrap;">
-
-  <li class="nav-item d-inline-block">
-    <a routerLink="/home" class="nav-link text-uppercase" routerLinkActive="active">
-      <i class="fas fa-home"></i>
-      <span translate>Home</span>
-    </a>
-  </li>
-  <li class="nav-item d-inline-block">
-      <a routerLink="/about" class="nav-link text-uppercase" routerLinkActive="active">
+<div class="nav-wrapper">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a routerLink="/home" class="nav-link" routerLinkActive="active">
+        <i class="fas fa-home"></i>
+        <span translate>Home</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/about" class="nav-link" routerLinkActive="active">
         <i class="fas fa-question-circle"></i>
         <span translate>About</span>
       </a>
     </li>
-    <li class="nav-item d-inline-block">
-        <a routerLink="/trip" class="nav-link text-uppercase" routerLinkActive="active">
-          <i class="fas fa-home"></i>
-          <span translate>Trip</span>
-        </a>
-      </li>
+    <li class="nav-item">
+      <a routerLink="/trip" class="nav-link" routerLinkActive="active">
+        <i class="fas fa-edit"></i>
+        <span translate>Trip</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
   <!-- <ng-container *ngFor="let item of links">
       <li class="nav-item d-inline-block">
         <a href="#" [routerLink]="item.link" class="nav-link" routerLinkActive="active">
@@ -34,4 +38,4 @@
         </div>
       </li>
     </ng-container> -->
-</ul>
+<!-- </ul> -->

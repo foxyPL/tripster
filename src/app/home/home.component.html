@@ -1,72 +1,9 @@
-<div class="container-fluid card" *ngFor="let location of locations | slice:0:4" style="margin: 1em 0 1em 0; height: 350px">
-  <div class="row h-100" style="margin: 1em 0 1em 0;">
-    <div class="col">
-      <img src="https://d2sdiix1bd21d9.cloudfront.net/images/uploaded-new/361319" class="img-fluid">
-    </div>
-    <div class="col-6">
-      <div class="p-2">
-        <h4>{{location.name}}</h4>
-      </div>
-      <div class="p-2" style="overflow-y:auto;height: 250px">{{location.descriptionNoHtml}}</div>
-    </div>
-    <div class="col" style="overflow-y:auto;height: 300px">
-      <div class="p-2">Category : {{location.mainType.name}}</div>
-      <div class="p-2" innerHTML={{location.contactInformation}}></div>
-      <div class="p-2">Phone Number: 22 629 52 71</div>
-      <div class="p-2">Opening Hours: Wed 10am-5pm, Thu 10am-4pm, Fri-Sun 10am-4pm</div>
-      <div class="p-2">
-        <a class="btn btn-lg btn-success" href="#">More
-          <span class="glyphicon glyphicon-align-right"></span>
-        </a>
-      </div>
+<div class="error">
+    <div class="error__content">
+      <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo"/>
+      <h2 translate>Hello world!</h2>
+      <app-loader [isLoading]="isLoading" size="1.5"></app-loader>
+      <h3 [hidden]="isLoading">{{quote}}</h3>
+      <button type="button" class="btn btn-accent btn-pill mt-4">← Go Back</button>
     </div>
   </div>
-
-</div>
-<div *ngFor="let location of locations | slice:0:4" class="card d-flex flex-row flex-rowjustify-content-start" style="min-height:350px; margin: 1em 0 1em 0;">
-  <div class="" style="min-width: 300px;">
-    <img src="https://d2sdiix1bd21d9.cloudfront.net/images/uploaded-new/361319" class="p-10 img-fluid">
-  </div>
-  <div class="p-2 h-100 flex-column">
-    <div class="p-2">
-      <h4>{{location.name}}</h4>
-    </div>
-    <div class="p-2" style="overflow-y:auto;height: 250px">{{location.descriptionNoHtml}}</div>
-  </div>
-  <div class="p-2 h-100 flex-column" style="min-width: 300px">
-    <div class="p-2">Category : {{location.mainType.name}}</div>
-    <div class="p-2" innerHTML={{location.contactInformation}}></div>
-    <div class="p-2">Phone Number: 22 629 52 71</div>
-    <div class="p-2">Opening Hours: Wed 10am-5pm, Thu 10am-4pm, Fri-Sun 10am-4pm</div>
-    <div class="p-2">
-      <a class="btn btn-lg btn-success" href="#">More
-        <span class="glyphicon glyphicon-align-right"></span>
-      </a>
-    </div>
-  </div>
-</div>
-
-
-
-<div *ngFor="let location of locations | slice:0:4" class="card d-flex flex-row flex-rowjustify-content-start" style="min-height:350px; margin: 1em 0 1em 0;">
-  <div class="" style="min-width: 300px;">
-    <img src="https://d2sdiix1bd21d9.cloudfront.net/images/uploaded-new/361319" class="p-10 img-fluid">
-  </div>
-  <div class="p-2 h-100 flex-column">
-    <div class="p-2">
-      <h4>{{location.name}}</h4>
-    </div>
-    <div class="p-2" style="overflow-y:auto;height: 250px">{{location.descriptionNoHtml}}</div>
-  </div>
-  <div class="p-2 h-100 flex-column" style="min-width: 300px">
-    <div class="p-2">Category : {{location.mainType.name}}</div>
-    <div class="p-2" innerHTML={{location.contactInformation}}></div>
-    <div class="p-2">Phone Number: 22 629 52 71</div>
-    <div class="p-2">Opening Hours: Wed 10am-5pm, Thu 10am-4pm, Fri-Sun 10am-4pm</div>
-    <div class="p-2">
-      <a class="btn btn-lg btn-success" href="#">More
-        <span class="glyphicon glyphicon-align-right"></span>
-      </a>
-    </div>
-  </div>
-</div>
