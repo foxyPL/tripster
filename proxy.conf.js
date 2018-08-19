@@ -15,6 +15,13 @@ const proxyConfig = [
     target: 'https://api.chucknorris.io',
     changeOrigin: true,
     secure: false
+  },
+  {
+    context: '/backend',
+    pathRewrite: { '^/backend': '' },
+    target: 'http://localhost:3000',
+    changeOrigin: true,
+    secure: false
   }
 ];
 

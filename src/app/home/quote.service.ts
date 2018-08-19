@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 const routes = {
   quote: (c: RandomQuoteContext) => `/jokes/random?category=${c.category}`
@@ -19,7 +19,7 @@ export class QuoteService {
 
   getRandomQuote(context: RandomQuoteContext): Observable<string> {
     return this.httpClient
-      .cache()
+      // .cache()
       .get(routes.quote(context))
       .pipe(
         map((body: any) => body.value),

@@ -1,30 +1,25 @@
 @import "src/theme/theme-variables";
 
-.page {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	min-height: 100%;
+// Shadows
+$side-shadow: 0 0.125rem 9.375rem rgba($shuttle-gray, .1),
+              0 0.25rem 0.5rem rgba($shuttle-gray, .12),
+              0 0.9375rem 1.375rem rgba($shuttle-gray, .10),
+              0 0.4375rem 2.1875rem rgba(#A5B6C9, .10);
 
-	body.fixed-header & {
-		padding-top: $header-height;
-	}
+$main-navbar-height: 3.75rem !default;
 
-	body.aside-opened & {
-		@media (min-width: 1600px) {
-			margin-right: $aside-width;
-		}
-	}
+.main-sidebar {
+	top: 0;
+  position: fixed;
+  height: calc(100vh);
+  background: white;
+  z-index: 1070;
+  will-change: transform;
+  transition: transform 200ms ease-in-out;
+	box-shadow: $side-shadow;
 }
 
-.page-main {
-	flex: 1 1 auto;
+.main-content > .main-content-container.container-fluid {
+		min-height: calc(100vh - #{$main-navbar-height + $main-navbar-height});
 }
-
-.page-content {
-	margin: .75rem 0;
-
-	@include media-breakpoint-up(md) {
-		margin: 1.5rem 0;
-	}
-}
+	

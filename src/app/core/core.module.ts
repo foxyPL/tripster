@@ -1,22 +1,23 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-import { ShellComponent } from './shell/shell.component';
-import { HeaderComponent } from './shell/header/header.component';
-import { RouteReusableStrategy } from './route-reusable-strategy';
-import { AuthenticationService } from './authentication/authentication.service';
+import { TranslateModule } from '@ngx-translate/core';
 import { AuthenticationGuard } from './authentication/authentication.guard';
-import { I18nService } from './i18n.service';
-import { HttpService } from './http/http.service';
-import { HttpCacheService } from './http/http-cache.service';
+import { AuthenticationService } from './authentication/authentication.service';
 import { ApiPrefixInterceptor } from './http/api-prefix.interceptor';
-import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
 import { CacheInterceptor } from './http/cache.interceptor';
+import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
+import { HttpCacheService } from './http/http-cache.service';
+import { HttpService } from './http/http.service';
+import { I18nService } from './i18n.service';
+import { RouteReusableStrategy } from './route-reusable-strategy';
+import { HeaderComponent } from './shell/header/header.component';
 import { MenuComponent } from './shell/menu/menu.component';
+import { NavbarComponent } from './shell/navbar/navbar.component';
+import { ShellComponent } from './shell/shell.component';
+import { SidebarComponent } from './shell/sidebar/sidebar.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,9 @@ import { MenuComponent } from './shell/menu/menu.component';
   declarations: [
     HeaderComponent,
     ShellComponent,
-    MenuComponent
+    MenuComponent,
+    NavbarComponent,
+    SidebarComponent
   ],
   providers: [
     AuthenticationService,

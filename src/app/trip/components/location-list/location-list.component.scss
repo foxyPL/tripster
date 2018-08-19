@@ -1,0 +1,68 @@
+.card-post {
+
+    box-shadow: 0 2px 0 rgba(90,97,105,.11), 0 4px 8px rgba(90,97,105,.12), 0 10px 10px rgba(90,97,105,.06), 0 7px 70px rgba(90,97,105,.1);
+    background-color: #fff;
+    border: none;
+    border-radius: .625rem;
+
+    .card-body {
+        padding: 1.5625rem 1.5625rem;
+      }
+
+      .card-footer,
+      .card-header {
+        padding-left:  1.5625rem;
+        padding-right:  1.5625rem;
+      }
+
+       // Card Post :: Image
+  &__image {
+    position: relative;
+    min-height: 10.3125rem;
+    border-top-left-radius: .625rem;
+    border-top-right-radius: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &-sidebar {
+    min-width: 322px;
+    max-width: 322px;
+    border:none;
+
+    li {
+        background:#cfd1d361;
+    }
+  }
+
+ // Card Post -- Aside Modifier
+ &--aside {
+    display: flex;
+    flex-flow: row;
+
+    .card-post__image {
+      border-top-right-radius: 0;
+      border-top-left-radius: .625rem;
+      border-bottom-left-radius: .625rem;
+      min-width: 322px;
+    }
+  }
+  //
+  // Variations
+  //
+  
+  // Variation 1
+  &--1 {
+    .card-post__category {
+      position: absolute;
+    }
+
+    .card-post__category {
+        top: 0.9375rem;
+        right: 0.9375rem;
+        position: absolute;
+        text-transform: uppercase;
+      }
+}
+}

@@ -6,73 +6,22 @@
 $fa-font-path: "~@fortawesome/fontawesome-free-webfonts/webfonts";
 $font-family-base: 'Roboto', sans-serif;
 
+
+$font-family-roboto-mono-first: "Roboto Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$main-sidebar-nav-link-font-family: $font-family-roboto-mono-first !default;
+
 // ---------------------------------------------------------------------------
 // Bootstrap variables
 //
 // Override Bootstrap variables here to suite your theme.
 // Copy variables you want to customize from node_modules/bootstrap/scss/_variables.scss
 
-//
-// Color system
-//
-
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #868e96;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
-$black:  #000;
-
-$white:  #fff;
-$blue: #467fcf;
-$azure: #45aaf2;
-$indigo: #6574cd;
-$purple: #a55eea;
-$pink: #f66d9b;
-$red: #cd201f;
-$orange: #fd9644;
-$yellow: #f1c40f;
-$lime: #7bd235;
-$green: #5eba00;
-$teal: #2bcbba;
-$cyan: #17a2b8;
-
-
-$theme-colors: (
-  primary: $blue,
-  secondary: $gray-600,
-  success: $green,
-  info: $azure,
-  warning: $yellow,
-  danger: $red,
-  light: $gray-100,
-  dark: $gray-800
-);
-
-// Options
-$enable-rounded: true;
-$enable-shadows: false;
-$enable-gradients: false;
-$enable-transitions: true;
-$enable-hover-media-query: false;
-$enable-grid-classes: true;
-$enable-print-styles: true;
-
-$body-bg: #f5f7fb;
-$body-color: $gray-700;
-
-// Aside
-$aside-width: 22rem;
-
-// Header
-$header-bg: #0667d0;
-$header-color: #fff;
-$header-height: 4.5rem;
-
+// New grays
+$shuttle-gray: #5A6169 !default;
+$border-color: #e1e5eb;
+$fiord-blue:   #3D5170 !default;
+$mischka:      #CACEDB !default;
+$reagent-gray: #818EA3 !default;
 
 // Use Bootstrap defaults for other variables, imported here so we can access all app variables in one place when used
 // in components.

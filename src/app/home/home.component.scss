@@ -1,3 +1,5 @@
+@import "src/theme/theme-variables";
+
 .logo {
   width: 100px;
 }
@@ -6,4 +8,35 @@ q {
   font-style: italic;
   font-size: 1.2rem;
   quotes: "« " " »";
+}
+
+.error {
+  height: calc(100vh - 3.75rem);
+  display: flex;
+
+  &__content {
+    padding: 0 0.9375rem;
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+  color: $mischka;
+  font-weight: 700;
+  font-size: 3.75rem;
+  margin-bottom: 1.5625rem;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 0.625rem;
+}
+
+p {
+  color: $reagent-gray;
+}
 }
