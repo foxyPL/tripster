@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
@@ -10,19 +9,18 @@ import * as fromPlaceAction from './places.actions';
 
 @Injectable()
 export class PlacesEffects {
-
   @Effect()
   loadPlacesEffect$: Observable<Action> = this.actions$.pipe(
     ofType(fromPlaceAction.PlacesActionTypes.LoadPlaces),
-    switchMap((action) => {
+    switchMap(action => {
       return this.placesService.getPlaces().pipe(
         map(result => {
           return new fromPlaceAction.LoadPlacesSuccessAction({ items: result });
-        }));
+        })
+      );
     }),
-    catchError(error =>
-      of(new fromPlaceAction.LoadPlacesFailureAction({ error }))
-    ));
+    catchError(error => of(new fromPlaceAction.LoadPlacesFailureAction({ error })))
+  );
 
-  constructor(private actions$: Actions, private placesService: PlacesService) { }
+  constructor(private actions$: Actions, private placesService: PlacesService) {}
 }

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RootState } from '@app/root-store/root-state';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { LocationModel } from './../../../models/location';
-import { LoadPlacesAction, selectAll, selectTotal } from './../../../root-store/places';
+import { LoadPlacesAction, selectAll, selectTotal, PlacesState } from './../../../root-store/places';
 import * as routerActions from './../../../root-store/router/actions';
 
 @Component({
@@ -12,20 +12,15 @@ import * as routerActions from './../../../root-store/router/actions';
   styleUrls: ['./location-list.component.scss']
 })
 export class LocationListComponent implements OnInit {
-
   locations$: Observable<LocationModel[]>;
   total$: Observable<number>;
 
-  constructor(private store$: Store<RootState>) { }
+  constructor(private store$: Store<PlacesState>) {}
 
   ngOnInit() {
-    this.total$ = this.store$.select(selectTotal);
-    this.locations$ = this.store$.select(selectAll);
-
-    this.store$.dispatch(
-      new LoadPlacesAction()
-    );
-
+    this.store$.dispatch(new LoadPlacesAction());
+    this.total$ = this.store$.pipe(select(selectTotal));
+    this.locations$ = this.store$.pipe(select(selectAll));
   }
 
   public goToHome() {
@@ -35,5 +30,4 @@ export class LocationListComponent implements OnInit {
     //   path: ['/about']
     // }));
   }
-
 }

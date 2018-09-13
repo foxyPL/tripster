@@ -20,8 +20,6 @@ import { PlacesService } from './places-service';
     NgPipesModule
   ],
   declarations: [LocationListComponent],
-  providers: [
-    PlacesService
-  ]
+  providers: [PlacesService]
 })
-export class TripModule { }
+export class TripModule {}

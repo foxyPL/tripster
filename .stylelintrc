@@ -1,15 +1,10 @@
 {
   "extends": ["stylelint-config-standard", "stylelint-config-recommended-scss"],
   "rules": {
-    "font-family-name-quotes": "always-where-recommended",
-    "function-url-quotes": [
-      "always",
-      {
-        "except": ["empty"]
-      }
-    ],
+    "font-family-name-quotes": null,
+    "function-url-quotes": null,
     "selector-attribute-quotes": "always",
-    "string-quotes": "double",
+    "string-quotes": null,
     "max-nesting-depth": 3,
     "selector-max-compound-selectors": 3,
     "selector-max-specificity": "0,3,2",

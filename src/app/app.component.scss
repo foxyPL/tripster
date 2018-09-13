@@ -1,20 +1,18 @@
-@import "src/theme/theme-variables";
+@import 'src/theme/theme-variables';
 
 // Body
 body {
-    background: white;
-    font-size: 15px;
-    font-weight: 500;
-  
-    @media (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi) {
-      font-size: 13px;
-      font-weight: 400;
-    }
-  }
+  background: white;
+  font-size: 15px;
+  font-weight: 500;
 
-  // Labels
-label {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    font-size: 13px;
     font-weight: 400;
   }
-  
+}
+
+// Labels
+label {
+  font-weight: 400;
+}

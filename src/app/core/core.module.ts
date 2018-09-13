@@ -20,20 +20,8 @@ import { ShellComponent } from './shell/shell.component';
 import { SidebarComponent } from './shell/sidebar/sidebar.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    TranslateModule,
-    NgbModule,
-    RouterModule
-  ],
-  declarations: [
-    HeaderComponent,
-    ShellComponent,
-    MenuComponent,
-    NavbarComponent,
-    SidebarComponent
-  ],
+  imports: [CommonModule, HttpClientModule, TranslateModule, NgbModule, RouterModule],
+  declarations: [HeaderComponent, ShellComponent, MenuComponent, NavbarComponent, SidebarComponent],
   providers: [
     AuthenticationService,
     AuthenticationGuard,
@@ -53,12 +41,14 @@ import { SidebarComponent } from './shell/sidebar/sidebar.component';
   ]
 })
 export class CoreModule {
-
-  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+  constructor(
+    @Optional()
+    @SkipSelf()
+    parentModule: CoreModule
+  ) {
     // Import guard
     if (parentModule) {
       throw new Error(`${parentModule} has already been loaded. Import Core module in the AppModule only.`);
     }
   }
-
 }

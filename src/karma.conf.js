@@ -39,7 +39,9 @@ module.exports = function(config) {
     // Level of logging, can be: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
     logLevel: config.LOG_INFO,
     autoWatch: true,
+    // Chrome, ChromeHeadless
     browsers: ['ChromeHeadless'],
     singleRun: false
   });
 };
+

@@ -3,11 +3,10 @@
  */
 
 // Set Font Awesome font path
-$fa-font-path: "~@fortawesome/fontawesome-free-webfonts/webfonts";
+$fa-font-path: '~@fortawesome/fontawesome-free-webfonts/webfonts';
 $font-family-base: 'Roboto', sans-serif;
 
-
-$font-family-roboto-mono-first: "Roboto Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-roboto-mono-first: 'Roboto Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
 $main-sidebar-nav-link-font-family: $font-family-roboto-mono-first !default;
 
 // ---------------------------------------------------------------------------
@@ -17,20 +16,19 @@ $main-sidebar-nav-link-font-family: $font-family-roboto-mono-first !default;
 // Copy variables you want to customize from node_modules/bootstrap/scss/_variables.scss
 
 // New grays
-$shuttle-gray: #5A6169 !default;
+$shuttle-gray: #5a6169 !default;
 $border-color: #e1e5eb;
-$fiord-blue:   #3D5170 !default;
-$mischka:      #CACEDB !default;
-$reagent-gray: #818EA3 !default;
+$fiord-blue: #3d5170 !default;
+$mischka: #cacedb !default;
+$reagent-gray: #818ea3 !default;
 
 // Use Bootstrap defaults for other variables, imported here so we can access all app variables in one place when used
 // in components.
 // @import '~bootstrap/scss/bootstrap';
 
-@import "~bootstrap/scss/_functions";
-@import "~bootstrap/scss/_variables";
-@import "~bootstrap/scss/_functions";
+@import '~bootstrap/scss/_functions';
+@import '~bootstrap/scss/_variables';
+@import '~bootstrap/scss/_functions';
 @import '~bootstrap/scss/_mixins';
 @import '~bootstrap/scss/_navbar';
 @import '~bootstrap/scss/_nav';
-

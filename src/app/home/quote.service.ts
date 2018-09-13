@@ -14,17 +14,15 @@ export interface RandomQuoteContext {
 
 @Injectable()
 export class QuoteService {
-
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   getRandomQuote(context: RandomQuoteContext): Observable<string> {
     return this.httpClient
-      // .cache()
+      .cache()
       .get(routes.quote(context))
       .pipe(
         map((body: any) => body.value),
         catchError(() => of('Error, could not load joke :-('))
       );
   }
-
 }

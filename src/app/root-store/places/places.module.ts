@@ -4,7 +4,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import * as fromPlaces from './index';
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -13,4 +12,4 @@ import * as fromPlaces from './index';
   ],
   declarations: []
 })
-export class PlacesModule { }
+export class PlacesModule {}

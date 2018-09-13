@@ -1,23 +1,30 @@
-import { TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
-
-import { AuthenticationService, Credentials} from './authentication.service';
+import { fakeAsync, inject, TestBed, tick } from '@angular/core/testing';
+import { AuthenticationService, Credentials } from './authentication.service';
+import { MockAngulartics2AppInsightsExtended } from '@app/core/ai.service.mock';
+import { Angulartics2AppInsightsExtended } from '@app/core/ai.service';
 
 const credentialsKey = 'credentials';
 
 describe('AuthenticationService', () => {
   let authenticationService: AuthenticationService;
+  let aiService: MockAngulartics2AppInsightsExtended;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AuthenticationService]
+      providers: [
+        AuthenticationService,
+        { provide: Angulartics2AppInsightsExtended, useClass: MockAngulartics2AppInsightsExtended }
+      ]
     });
   });
 
-  beforeEach(inject([
-    AuthenticationService
-  ], (_authenticationService: AuthenticationService) => {
-    authenticationService = _authenticationService;
-  }));
+  beforeEach(inject(
+    [AuthenticationService],
+    (_authenticationService: AuthenticationService, _aiService: Angulartics2AppInsightsExtended) => {
+      authenticationService = _authenticationService;
+      aiService = _aiService;
+    }
+  ));
 
   afterEach(() => {
     // Cleanup

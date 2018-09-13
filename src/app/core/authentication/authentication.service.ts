@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Angulartics2AppInsightsExtended } from '@app/core/ai.service';
 
-
-
 export interface Credentials {
   // Customize received credentials here
   username: string;
@@ -24,12 +22,9 @@ const credentialsKey = 'credentials';
  */
 @Injectable()
 export class AuthenticationService {
-
   private _credentials: Credentials | null;
-  private _angulartics2AppInsights: Angulartics2AppInsightsExtended;
 
   constructor(private angulartics2AppInsights: Angulartics2AppInsightsExtended) {
-    this._angulartics2AppInsights = angulartics2AppInsights;
     const savedCredentials = sessionStorage.getItem(credentialsKey) || localStorage.getItem(credentialsKey);
     if (savedCredentials) {
       this._credentials = JSON.parse(savedCredentials);
@@ -48,8 +43,8 @@ export class AuthenticationService {
       token: '123456'
     };
     this.setCredentials(data, context.remember);
-    this._angulartics2AppInsights.setUsername(data.username);
-    this._angulartics2AppInsights.setUserProperties({accountId: data.username, userId: data.username});
+    this.angulartics2AppInsights.setUsername(data.username);
+    this.angulartics2AppInsights.setUserProperties({ accountId: data.username, userId: data.username });
     return of(data);
   }
 
@@ -59,7 +54,7 @@ export class AuthenticationService {
    */
   logout(): Observable<boolean> {
     // Customize credentials invalidation here
-    this._angulartics2AppInsights.clearAuthenticatedUserContext();
+    this.angulartics2AppInsights.clearAuthenticatedUserContext();
     this.setCredentials();
     return of(true);
   }
@@ -98,5 +93,4 @@ export class AuthenticationService {
       localStorage.removeItem(credentialsKey);
     }
   }
-
 }

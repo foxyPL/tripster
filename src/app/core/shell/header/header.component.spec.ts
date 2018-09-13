@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MenuComponent } from '@app/core/shell/menu/menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
-import { RouterTestingModule } from '@angular/router/testing';
-
 import { AuthenticationService } from '../../authentication/authentication.service';
 import { MockAuthenticationService } from '../../authentication/authentication.service.mock';
 import { I18nService } from '../../i18n.service';
@@ -14,18 +14,10 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        NgbModule.forRoot(),
-        TranslateModule.forRoot()
-      ],
-      declarations: [HeaderComponent],
-      providers: [
-        { provide: AuthenticationService, useClass: MockAuthenticationService },
-        I18nService
-      ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule, NgbModule.forRoot(), TranslateModule.forRoot()],
+      declarations: [HeaderComponent, MenuComponent],
+      providers: [{ provide: AuthenticationService, useClass: MockAuthenticationService }, I18nService]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -6,6 +6,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CoreModule } from '@app/core';
 import { LoginComponent } from './login.component';
+import { Angulartics2AppInsightsExtended } from '@app/core/ai.service';
+import { MockAngulartics2AppInsightsExtended } from '@app/core/ai.service.mock';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -13,16 +15,10 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        NgbModule.forRoot(),
-        RouterTestingModule,
-        TranslateModule.forRoot(),
-        ReactiveFormsModule,
-        CoreModule
-      ],
+      imports: [NgbModule.forRoot(), RouterTestingModule, TranslateModule.forRoot(), ReactiveFormsModule, CoreModule],
+      providers: [{ provide: Angulartics2AppInsightsExtended, useClass: MockAngulartics2AppInsightsExtended }],
       declarations: [LoginComponent]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

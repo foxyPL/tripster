@@ -22,5 +22,3 @@ export class LoadPlacesFailureAction implements Action {
 }
 
 export type PlacesActions = LoadPlacesAction | LoadPlacesSuccessAction | LoadPlacesFailureAction;
-
-

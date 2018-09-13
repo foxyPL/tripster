@@ -11,11 +11,7 @@ describe('Route', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        AuthenticationGuard,
-        { provide: AuthenticationService, useClass: MockAuthenticationService },
-        Route
-      ]
+      providers: [AuthenticationGuard, { provide: AuthenticationService, useClass: MockAuthenticationService }, Route]
     });
   });
 

@@ -7,9 +7,4 @@ export * from './places.reducer';
 
 export const getPlacesState = createFeatureSelector<PlacesState>('places');
 
-export const {
-    selectIds,
-    selectEntities,
-    selectAll,
-    selectTotal,
-} = adapter.getSelectors(getPlacesState);
+export const { selectIds, selectEntities, selectAll, selectTotal } = adapter.getSelectors(getPlacesState);

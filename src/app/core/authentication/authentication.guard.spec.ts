@@ -1,9 +1,8 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
-
+import { AuthenticationGuard } from './authentication.guard';
 import { AuthenticationService } from './authentication.service';
 import { MockAuthenticationService } from './authentication.service.mock';
-import { AuthenticationGuard } from './authentication.guard';
 
 describe('AuthenticationGuard', () => {
   let authenticationGuard: AuthenticationGuard;
@@ -18,20 +17,18 @@ describe('AuthenticationGuard', () => {
       providers: [
         AuthenticationGuard,
         { provide: AuthenticationService, useClass: MockAuthenticationService },
-        { provide: Router, useValue: mockRouter },
+        { provide: Router, useValue: mockRouter }
       ]
     });
   });
 
-  beforeEach(inject([
-    AuthenticationGuard,
-    AuthenticationService
-  ], (_authenticationGuard: AuthenticationGuard,
-      _authenticationService: MockAuthenticationService) => {
-
-    authenticationGuard = _authenticationGuard;
-    authenticationService = _authenticationService;
-  }));
+  beforeEach(inject(
+    [AuthenticationGuard, AuthenticationService],
+    (_authenticationGuard: AuthenticationGuard, _authenticationService: MockAuthenticationService) => {
+      authenticationGuard = _authenticationGuard;
+      authenticationService = _authenticationService;
+    }
+  ));
 
   it('should have a canActivate method', () => {
     expect(typeof authenticationGuard.canActivate).toBe('function');
@@ -49,7 +46,7 @@ describe('AuthenticationGuard', () => {
     const result = authenticationGuard.canActivate();
 
     // Assert
-    expect(mockRouter.navigate).toHaveBeenCalledWith(['/login'], {replaceUrl: true});
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/login'], { replaceUrl: true });
     expect(result).toBe(false);
   });
 });

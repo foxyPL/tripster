@@ -2,11 +2,11 @@ import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/s
 import * as fromTrip from './trip/trip.reducer';
 
 export interface State {
-    trip: fromTrip.State;
+  trip: fromTrip.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
-    trip: fromTrip.tripReducer
+  trip: fromTrip.tripReducer
 };
 
 export const getTripState = createFeatureSelector<fromTrip.State>('trip');

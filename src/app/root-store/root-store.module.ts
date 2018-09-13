@@ -18,11 +18,8 @@ import { RouterStoreModule } from './router/router-store.module';
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([RouterEffects]),
     RouterStoreModule,
-    !environment.production
-      ? StoreDevtoolsModule.instrument({ maxAge: 50 })
-      : [],
+    !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : []
   ],
-  declarations: [],
+  declarations: []
 })
-
-export class RootStoreModule { }
+export class RootStoreModule {}

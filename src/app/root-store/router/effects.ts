@@ -7,20 +7,13 @@ import * as RouterActions from './actions';
 
 @Injectable()
 export class RouterEffects {
-
-    constructor(
-        private actions$: Actions,
-        private router: Router,
-        private location: Location
-      ) {}
+  constructor(private actions$: Actions, private router: Router, private location: Location) {}
 
   @Effect({ dispatch: false })
   navigate$ = this.actions$.pipe(
     ofType(RouterActions.GO),
     map((action: RouterActions.Go) => action.payload),
-    tap(({ path, query: queryParams, extras }) =>
-      this.router.navigate(path, { queryParams, ...extras })
-    )
+    tap(({ path, query: queryParams, extras }) => this.router.navigate(path, { queryParams, ...extras }))
   );
 
   @Effect({ dispatch: false })
@@ -34,5 +27,4 @@ export class RouterEffects {
     ofType(RouterActions.FORWARD),
     tap(() => this.location.forward())
   );
-
 }

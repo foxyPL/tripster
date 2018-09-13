@@ -4,42 +4,41 @@ import { AuthenticationService } from '@app/core/authentication/authentication.s
 import { I18nService } from '@app/core/i18n.service';
 
 @Component({
-    selector: 'app-navbar',
-    templateUrl: 'navbar.component.html',
-    styleUrls: ['./navbar.component.scss']
+  selector: 'app-navbar',
+  templateUrl: 'navbar.component.html',
+  styleUrls: ['./navbar.component.scss']
 })
-
 export class NavbarComponent implements OnInit {
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService,
+    private i18nService: I18nService
+  ) {}
 
-    constructor(private router: Router,
-        private authenticationService: AuthenticationService,
-        private i18nService: I18nService) { }
+  ngOnInit() {}
 
-    ngOnInit() { }
+  setLanguage(language: string) {
+    this.i18nService.language = language;
+  }
 
-    setLanguage(language: string) {
-        this.i18nService.language = language;
-      }
+  logout() {
+    this.authenticationService.logout().subscribe(() => this.router.navigate(['/login'], { replaceUrl: true }));
+  }
 
-      logout() {
-        this.authenticationService.logout()
-          .subscribe(() => this.router.navigate(['/login'], { replaceUrl: true }));
-      }
+  get currentLanguage(): string {
+    return this.i18nService.language;
+  }
 
-      get currentLanguage(): string {
-        return this.i18nService.language;
-      }
+  get languages(): string[] {
+    return this.i18nService.supportedLanguages;
+  }
 
-      get languages(): string[] {
-        return this.i18nService.supportedLanguages;
-      }
+  get username(): string | null {
+    const credentials = this.authenticationService.credentials;
+    return credentials ? credentials.username : null;
+  }
 
-      get username(): string | null {
-        const credentials = this.authenticationService.credentials;
-        return credentials ? credentials.username : null;
-      }
-
-      getTitle() {
-        return 'Dashboard';
-      }
+  getTitle() {
+    return 'Dashboard';
+  }
 }

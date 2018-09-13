@@ -10,7 +10,7 @@ export interface PlacesState extends EntityState<PlaceModel> {
 
 export const adapter: EntityAdapter<PlaceModel> = createEntityAdapter<PlaceModel>({
   selectId: (place: PlaceModel) => place.id,
-  sortComparer: false,
+  sortComparer: false
 });
 
 export const initialState: PlacesState = adapter.getInitialState({
@@ -21,7 +21,6 @@ export const initialState: PlacesState = adapter.getInitialState({
 
 export function reducer(state: PlacesState = initialState, action: PlacesActions): PlacesState {
   switch (action.type) {
-
     case PlacesActionTypes.LoadPlaces:
       return {
         ...state,
@@ -32,7 +31,7 @@ export function reducer(state: PlacesState = initialState, action: PlacesActions
     case PlacesActionTypes.LoadPlacesSuccess:
       return adapter.addAll(action.payload.items, { ...state, error: null, isLoading: false });
 
-      case PlacesActionTypes.LoadPlacesFailure:
+    case PlacesActionTypes.LoadPlacesFailure:
       return {
         ...state,
         error: action.payload.error,

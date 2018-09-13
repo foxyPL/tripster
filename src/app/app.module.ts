@@ -29,11 +29,10 @@ import { LoginModule } from './login/login.module';
     AboutModule,
     LoginModule,
     Angulartics2Module.forRoot([Angulartics2AppInsightsExtended]),
-    AppRoutingModule,
+    AppRoutingModule
   ],
   declarations: [AppComponent],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

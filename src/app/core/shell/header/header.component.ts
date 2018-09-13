@@ -3,21 +3,21 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../../authentication/authentication.service';
 import { I18nService } from '../../i18n.service';
 
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
   menuHidden = true;
 
-  constructor(private router: Router,
-              private authenticationService: AuthenticationService,
-              private i18nService: I18nService) { }
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService,
+    private i18nService: I18nService
+  ) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   toggleMenu() {
     this.menuHidden = !this.menuHidden;
@@ -28,8 +28,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.authenticationService.logout()
-      .subscribe(() => this.router.navigate(['/login'], { replaceUrl: true }));
+    this.authenticationService.logout().subscribe(() => this.router.navigate(['/login'], { replaceUrl: true }));
   }
 
   get currentLanguage(): string {
@@ -48,5 +47,4 @@ export class HeaderComponent implements OnInit {
   getTitle() {
     return 'Dashboard';
   }
-
 }

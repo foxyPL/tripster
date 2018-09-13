@@ -4,13 +4,9 @@ import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router
 import { RouterEffects } from './effects';
 import { CustomSerializer } from './route-serializer';
 
-
 @NgModule({
-  imports: [
-    CommonModule,
-    StoreRouterConnectingModule.forRoot(),
-  ],
+  imports: [CommonModule, StoreRouterConnectingModule.forRoot()],
   providers: [RouterEffects, { provide: RouterStateSerializer, useClass: CustomSerializer }],
   declarations: []
 })
-export class RouterStoreModule { }
+export class RouterStoreModule {}

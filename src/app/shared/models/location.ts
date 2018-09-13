@@ -1,6 +1,6 @@
 export class Location {
-    lat: string;
-    long: string;
-    name: string;
-    description: string;
+  lat: string;
+  long: string;
+  name: string;
+  description: string;
 }

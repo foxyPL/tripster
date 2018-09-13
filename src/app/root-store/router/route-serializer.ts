@@ -22,7 +22,7 @@ export class CustomSerializer implements RouterStateSerializer<RouterStateUrl> {
 
     const {
       url,
-      root: { queryParams },
+      root: { queryParams }
     } = routerState;
     const { params } = route;
 
@@ -33,5 +33,5 @@ export class CustomSerializer implements RouterStateSerializer<RouterStateUrl> {
 }
 
 export const reducers: ActionReducerMap<State> = {
-  router: routerReducer,
+  router: routerReducer
 };
