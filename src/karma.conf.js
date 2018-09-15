@@ -26,7 +26,7 @@ module.exports = function(config) {
       suite: '' // Will become the package name attribute in xml testsuite element
     },
     coverageIstanbulReporter: {
-      reports: ['html', 'lcovonly', 'text-summary'],
+      reports: ['html', 'lcovonly', 'text-summary', 'cobertura'],
       dir: path.join(__dirname, '../reports/coverage'),
       fixWebpackSourcePaths: true
     },
