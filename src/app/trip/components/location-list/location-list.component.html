@@ -44,8 +44,9 @@
               <li class="list-group-item d-flex px-3">
                 <!-- <button class="btn btn-sm btn-outline-accent btn-primary btn-success">
                   <i class="fas fa-plus mr-2"></i>Add to Itinerary</button> -->
-                <button class="btn btn-sm btn-accent btn-primary ml-auto">
-                  <i class="fas fa-info-circle mr-2"></i>Read more</button>
+                  <button (click)="onClick(item.id)" class="btn btn-sm btn-accent btn-primary ml-auto">
+                    <i class="fas fa-info-circle mr-2"></i>Read more
+                  </button>
               </li>
             </ul>
           </div>

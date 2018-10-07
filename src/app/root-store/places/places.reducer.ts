@@ -1,6 +1,6 @@
 import { PlaceModel } from '@app/models/place';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
-import { PlacesActions, PlacesActionTypes } from './places.actions';
+import { PlacesActions, PlacesActionTypes, SelectPlaceAction } from './places.actions';
 
 export interface PlacesState extends EntityState<PlaceModel> {
   isLoading: boolean;
@@ -38,7 +38,15 @@ export function reducer(state: PlacesState = initialState, action: PlacesActions
         isLoading: false
       };
 
+    case PlacesActionTypes.SelectPlace:
+      return {
+        ...state,
+        selectedPlaceId: action.payload.id
+      };
+
     default:
       return state;
   }
 }
+
+export const getSelectedPowerId = (state: PlacesState) => state.selectedPlaceId;
